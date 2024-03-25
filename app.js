@@ -1,9 +1,9 @@
 import express, { json } from 'express';
-import { Sequelize } from 'sequelize';
-import { articlesRouter } from './src/routes/articles.js';
 import { corsMiddleware } from './src/middlewares/cors.js';
 import sequelize from './src/config/sequelizeConfig.js';
 import morgan from 'morgan';
+import articlesRouter from './src/routes/articles.js';
+import tagsRouter from './src/routes/tags.js';
 
 const app = express();
 
@@ -37,6 +37,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/articles', articlesRouter);
+app.use('/tags', tagsRouter);
 
 const PORT = process.env.PORT ?? 8080;
 app.listen(PORT, () => {

@@ -116,4 +116,37 @@ export class ArticleController {
 			res.status(500).json(error.message);
 		}
 	}
+
+	static async addTags(req, res) {
+		try {
+			const { articleId } = req.params;
+			const { tagIds } = req.body;
+
+			const article = await Article.findByPk(articleId);
+			if (!article) {
+				return res.status(404).json({ message: 'Article not found' });
+			}
+
+			await article.addTags(tagIds);
+			res.json({ message: 'Tags added to article' });
+		} catch (error) {
+			res.status(500).json(error.message);
+		}
+	}
+
+	static async removeTag(req, res) {
+		try {
+			const { articleId, tagId } = req.params;
+
+			const article = await Article.findByPk(articleId);
+			if (!article) {
+				return res.status(404).json({ message: 'Article not found' });
+			}
+
+			await article.removeTag(tagId);
+			res.json({ message: 'Tag removed from article' });
+		} catch (error) {
+			res.status(500).json(error.message);
+		}
+	}
 }
