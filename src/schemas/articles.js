@@ -12,7 +12,7 @@ const articleSchema = z.object({
 		invalid_type_error: 'Article content must be a string',
 		required_error: 'Article content is required',
 	}),
-	date: z.date({
+	date: z.string({
 		required_error: 'Please select a date and time',
 		invalid_type_error: "That's not a date!",
 	}),
@@ -27,7 +27,7 @@ const articleSchema = z.object({
 		invalid_type_error: 'Article tags must be an array of strings tags',
 	}),
 	summary: z.string(),
-	views: z.number().int().positive().default(0),
+	views: z.number().int().default(0),
 });
 
 export function validateArticle(input) {

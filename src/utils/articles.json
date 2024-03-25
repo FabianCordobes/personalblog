@@ -19,7 +19,7 @@
 		"date": "2024-03-20T10:00:00.000Z",
 		"imageUrl": "https://example.com/image2.jpg",
 		"category": "Programación",
-		"tags": ["Node.js", "JavaScript"],
+		"tags": ["JavaScript"],
 		"summary": "Una introducción básica a Node.js",
 		"views": 15
 	},
@@ -30,8 +30,7 @@
 		"date": "2024-03-23T14:00:00.000Z",
 		"imageUrl": "https://example.com/image3.jpg",
 		"category": "Música",
-		"tags": ["Guitarra", "Cover", "Rock"],
+		"tags": ["Guitarra"],
 		"summary": "Una breve introducción a mi segundo artículo"
 	}
 ]
-
